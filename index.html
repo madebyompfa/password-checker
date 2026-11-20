@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Password Strength Checker</h1>
+        <p class="intro">
+            Type a password to see how strong it is. Your password never leaves this page.
+            The breach check only sends the first 5 characters of its hash.
+        </p>
+
+        <!-- Password box with a show/hide button -->
+        <div class="input-row">
+            <input type="password" id="password" placeholder="Type a password" autocomplete="off">
+            <button type="button" id="toggle">Show</button>
+        </div>
+
+        <!-- Strength meter -->
+        <div class="meter">
+            <div id="meter-fill"></div>
+        </div>
+        <p id="strength-label">Start typing to check your password.</p>
+
+        <!-- List of checks (length, numbers, symbols...) -->
+        <ul id="checks" class="checks"></ul>
+
+        <!-- Crack time -->
+        <section class="card">
+            <h2>Time to crack</h2>
+            <p id="crack-time">-</p>
+        </section>
+
+        <!-- Breach check -->
+        <section class="card">
+            <h2>Breach check</h2>
+            <p id="breach-result">Check whether this password has appeared in a known data breach.</p>
+            <button type="button" id="breach-btn">Check if it's been leaked</button>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
